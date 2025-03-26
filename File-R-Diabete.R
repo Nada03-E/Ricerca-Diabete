@@ -84,7 +84,7 @@ library(car)
 
 
 # Dividi il dataset (70% training, 30% test)
-set.seed(123)  # Riproducibilità dividere proporzione nei gruppi
+set.seed(123)  # RiproducibilitÃ  dividere proporzione nei gruppi
 
 #creazione DATASET step 4
 
@@ -327,7 +327,7 @@ preProc <- c("nzv", "scale","corr")
 
 tuneGrid = expand.grid(
   fL = 0,       # Laplace smoothing 
-  usekernel = TRUE,  # Usa densità kernel
+  usekernel = TRUE,  # Usa densitÃ  kernel
   adjust = 1         # Regola la larghezza del kernel
 )
 
@@ -406,7 +406,7 @@ knn_modelPP_AUC_train <- auc(knn_modelPP_ROC_train)
 knn_modelPP_AUC_validation <- auc(knn_modelPP_ROC_validation)
 print(knn_modelPP_AUC_train)
 print(knn_modelPP_AUC_validation)
-# c'è OVERFITTING
+# c'Ã¨ OVERFITTING
 
 
 #### ADA BOOST ####
@@ -617,7 +617,7 @@ nnetPP_AUC_train <- auc(nnetPP_ROC_train)
 nnetPP_AUC_validation <- auc(nnetPP_ROC_validation)
 print(nnetPP_AUC_train)
 print(nnetPP_AUC_validation)
-#Non c'� overfitting 
+#Non c'è overfitting 
 
 #### GRADIENT BOOSTING ####
 set.seed(123)
@@ -703,7 +703,7 @@ performance(pred_r0,measure="spec")
 plot(performance(pred_r0,measure="spec"))
 
 
-# FA IN AUTOMATICO, VEDREMO CHE LA SOGLIA MIGLIORE SARà SIMILE A QUELLA TROVATA SOPRA. 
+# FA IN AUTOMATICO, VEDREMO CHE LA SOGLIA MIGLIORE SARÃ  SIMILE A QUELLA TROVATA SOPRA. 
 
 pred_r0 <- prediction(df_cv$Prob0,y)
 # remember     y=ifelse(y=="r0",1,0)
@@ -773,7 +773,7 @@ fit_final <- train(u~., data=train.df, method="rf", metric=metric, trControl=con
 fit_final
 
 Vimportance <- varImp(fit_final)
-plot(Vimportance) # HA POCO SENSO, NON SAPPIAMO SE è UNA CRESCIAT O DECRESCITA DEL TARGET. 
+plot(Vimportance) # HA POCO SENSO, NON SAPPIAMO SE Ã¨ UNA CRESCIAT O DECRESCITA DEL TARGET. 
 
 # performance on test set
 pred=predict(fit_final, test.df)
